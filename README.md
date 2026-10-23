@@ -7,7 +7,8 @@ A Python tool to find out what's taking up space on your computer.
 ## Features
 
 - [x] List the largest files in a folder
-- [ ] Show the total size of each folder
+- [x] Show the total size of each folder
+- [x] Skip files and folders that can't be accessed
 - [ ] Find duplicate files
 - [ ] Safe cleanup (files go to the Recycle Bin, never deleted permanently)
 - [ ] Graphical interface
@@ -25,13 +26,22 @@ git clone git@github.com:BrandonErick/disk-analyzer.git
 cd disk-analyzer
 ```
 
-Run the scanner:
+Scan your Downloads folder (default):
 
 ```bash
 python scanner.py
 ```
 
-It shows the 10 largest files in your Downloads folder.
+Scan any folder you choose:
+
+```bash
+python scanner.py ~
+python scanner.py "C:/Users/YourName/Documents"
+```
+
+It shows the 10 largest folders and the 10 largest files inside that folder.
+
+> **Note:** some folders, like OneDrive or files synced from your phone, may show files that are stored in the cloud or on another device, so they don't actually take up space on your disk. Always check before deleting anything.
 
 ## Contributing
 
